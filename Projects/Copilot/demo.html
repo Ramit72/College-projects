@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Demo Drive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        h2 {
+            color: #e82127;
+            margin-bottom: 10px;
+        }
+        p {
+            line-height: 1.6;
+        }
+        video {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .fsd-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .fsd-description {
+            flex: 1;
+            margin-right: 20px; /* Space between description and video */
+            text-align: center;
+        }
+        .fsd-video {
+            flex: 1;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
+        .demo-drive-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .image-item {
+            margin: 10px;
+            text-align: center;
+            max-width: 250px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .image-item img {
+            max-width: 100%;
+            border-bottom: 2px solid #e82127;
+        }
+        .image-item p {
+            padding: 10px;
+            color: #333;
+        }
+        .test-drive-form {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .test-drive-form h2 {
+            margin-bottom: 15px;
+        }
+        .test-drive-form p {
+            margin-bottom: 20px;
+        }
+        .test-drive-form button {
+            padding: 10px 15px;
+            background-color: #e82127;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .test-drive-form button:hover {
+            background-color: #d71a20;
+        }
+        .schedule-button {
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+        .vehicles {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .vehicle-card {
+            display: inline-block;
+            width: 280px;
+            margin: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: left;
+        }
+        .vehicle-card img {
+            width: 100%;
+            height: auto;
+        }
+        .vehicle-card div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px; /* Add padding for spacing */
+        }
+        .vehicle-card h3 {
+            font-size: 24px;
+            padding: 10px;
+        }
+        .vehicle-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .vehicle-modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            display: flex;
+            flex-direction: column; /* Ensure content stacks vertically */
+            max-height: 80vh; /* Limit height to 80% of viewport height */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        .vehicle-columns {
+            display: flex;
+            justify-content: space-between;
+        }
+        .vehicle-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the cards in each column */
+        }
+        .vehicle-card {
+            margin: 10px 0; /* Adjust spacing as needed */
+            width: 90%; /* Set a fixed width for uniformity */
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .vehicle-card img {
+            width: 245px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .cta-button {
+            background-color: #e82127;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #d71c24;
+        }
+        .hero {
+            background-color: white;
+            color: black;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .appointment-form {
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .appointment-form h2 {
+            color: #e82127;
+            margin-bottom: 20px;
+        }
+        .appointment-form form {
+            display: flex;
+            flex-direction: column;
+        }
+        .appointment-form label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .appointment-form input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .appointment-form input[type="text"]:focus {
+            border-color: #e82127;
+            outline: none;
+        }
+        .appointment-form input[type="datetime-local"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .appointment-form input[type="datetime-local"]:focus {
+            border-color: #e82127;
+            outline: none;
+        }
+        .appointment-form button {
+            padding: 10px 15px;
+            background-color: #e82127;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .appointment-form button:hover {
+            background-color: #d71a20;
+        }       
+        .form-section {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .form-section h2 {
+            margin-bottom: 20px; /* Increase this value for more space */
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function toggleModal() {
+            const modal = document.getElementById('vehicleModal');
+            const isVisible = modal.style.display === 'flex';
+            modal.style.display = isVisible ? 'none' : 'flex';
+            modal.setAttribute('aria-hidden', isVisible);
+            if (!isVisible) {
+                modal.querySelector('h2').focus(); // Set focus to modal heading when opened
+            }
+        }
+        function selectVehicle(name, description) {
+            document.getElementById('selected-vehicle').textContent = name;
+            document.getElementById('selected-description').textContent = description;
+            document.getElementById('car-model').value = name;
+            toggleModal();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">Tesla</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Models</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Drive Model S</h1>
+        <p>Experience Tesla Technology, Full Self-Driving, and get all your questions answered.</p>
+        <img src="https://digitalassets.tesla.com/discovery-tesla-com/image/upload/f_auto,q_auto/Selector-Model-S-Desktop-No-Vehicle-Selector.png" alt="Tesla Model S" />
+    </section>
+    <section id="fsd-supervised" class="fsd-container">
+        <div class="fsd-description">
+            <h2>Full Self-Driving (Supervised)</h2>
+            <p>Experience the future of driving with our Full Self-Driving (Supervised) feature. This advanced technology allows the car to navigate and drive itself under certain conditions while requiring driver supervision. Enjoy a hands-free experience while staying alert and ready to take control at any moment.</p>
+        </div>
+        <div class="fsd-video">
+            <video autoplay loop muted>
+                <source src="https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto,q_auto:best/Demo-Drive-Kiosk-FSD-No-Text.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+    <section class="demo-drive-gallery">
+        <div class="image-item">
+            <img src="https://s3-ap-southeast-1.amazonaws.com/motoristprod/editors%2Fimages%2F1724401049272-Screenshot+2024-08-23+161645.png" alt="Tesla on the road">
+            <p>Experience the thrill of the Tesla on the road.</p>
+        </div>
+        <div class="image-item">
+            <img src="https://miro.medium.com/v2/resize:fit:1400/0*tV-mOq72MPmAXbrE.jpg" alt="Tesla interior">
+            <p>Explore the advanced interior features of Tesla.</p>
+        </div>
+        <div class="image-item">
+            <img src="https://static1.topspeedimages.com/wordpress/wp-content/uploads/2024/04/model-3-performance_95.jpg" alt="Tesla in motion">
+            <p>Feel the power and performance in motion.</p>
+        </div>
+        <div class="image-item">
+            <img src="https://cdn.pixabay.com/photo/2016/10/13/22/30/tesla-1738969_1280.jpg" alt="Tesla charging">
+            <p>Charging made easy with Tesla's fast-charging stations.</p>
+        </div>
+    </section>
+    <section class="test-drive-form">
+        <h2>Select Your Car for Test Drive</h2>
+        <p id="selected-vehicle">Selected Vehicle: None</p>
+        <p id="selected-description"></p>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <img src="https://www.freepnglogos.com/uploads/tesla-logo-png-20.png" alt="Tesla Logo">
+    </header>
+    <main class="container">
+        <div class="main-content">
+                <div class="image-container">
+                    <div class="slide">
+                        <img src="https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTY36,$PN01,$WY19C,$INPB0&view=FRONT34&model=my&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&.png" alt="Model Y">
+                    </div>
+                    <div class="slide">
+                        <img src="https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTY36,$PN01,$WY19C,$INPB0&view=SIDE&model=my&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&.png" alt="Model Y Side">
+                    </div>
+                    <div class="slide">
+                        <img src="https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTY36,$PN01,$WY19C,$INPB0&view=REAR34&model=my&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&.png" alt="Model Y Back">
+
+                    </div>
+                    <a class="previous" onclick="moveSlides(-1)">
+                        <i class="fa fa-chevron-circle-left"></i>
+                    </a>
+                    <a class="next" onclick="moveSlides(1)">
+                        <i class="fa fa-chevron-circle-right"></i>
+                    </a>
+                </div>
+
+        </div>
+        <aside class="sidebar">
+            
+            <div class="title">Model Y</div>
+            
+            <section class="data">
+            <ol>
+                <li>
+                    <div class="facts">337ml</div>
+                    <span class="content">Range (EPA est.)</span>
+                </li>
+                <li>
+                    <div class="facts">135mph</div>
+                    <span class="content">Top Speed</span>
+                </li>
+                <li>
+                    <div class="facts">6.5sec</div>
+                    <span class="content">0-60 mph</span>
+                </li>
+                </ol>
+            </section>
+
+            <div class="cash"><h2>Cash</h2></div>
+
+            <button onclick="Buttonclick(this)" class="model-selection">
+                <div>Long Range Rear-Wheel Drive</div><span>$37,490</span>
+            </button>
+                    
+            
+            <button onclick="Buttonclick(this)" class="model-selection">
+                <div>Long Range All-Wheel Drive</div><span>$40,490</span>
+            </button>
+
+            
+            <button onclick="Buttonclick(this)" class="model-selection">
+                <div>Performance All-Wheel Drive</div><span>$43,490</span>
+            </button>
+
+            <div class="heading">Color Options</div>
+            <div class="colortray">
+
+            <button onclick="Buttonclick(this)" class="button">
+             <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3_/UI/Paint_StealthGrey.png?" alt="Pearl White Multi-Coat" x="7px" y="7px"></button>
+           
+            <button onclick="Buttonclick(this)" class="button">
+            <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/Paint_White.png?" alt="Pearl White Multi-Coat" x="7px" y="7px"></button>
+           
+            <button onclick="Buttonclick(this)" class="button">
+            <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/Paint_Blue.png?" alt="Pearl White Multi-Coat" x="7px" y="7px"></button>
+           
+            <button onclick="Buttonclick(this)" class="button">
+            <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/Paint_Red.png?" alt="Pearl White Multi-Coat" x="7px" y="7px"></button>
+            </div>
+            
+            <div class="heading">Tires</div>
+            <div class="tireopt">
+            <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODELY/UI/CN_gemini_wheels.png?" alt="Pearl White Multi-Coat" x="7px" y="7px">
+            <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODELY/UI/induction_wheels.png?" alt="Pearl White Multi-Coat" x="7px" y="7px">
+            </div>
+            
+            <div class="heading">Tow Package</div><span class="content">
+                Tow up to 3,500 lbs with a class II steel tow bar
+            </span>
+            <button onclick="Buttonclick(this)" class="button">
+                <div>Tow Hitch</div><span>$1,000</span>
+            </button>
+
+            <div class="heading">Interior</div>
+            <div class="tireopt">
+                <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/ui_swat_int_in3pb.png?" alt="Pearl White Multi-Coat" x="7px" y="7px">
+                <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/ui_swat_int_white.png?" alt="Pearl White Multi-Coat" x="7px" y="7px">
+            </div>
+
+            <section id="charging">
+                <div class="heading">Charging</div><div class="content">
+                    Every Tesla includes access to the largest global Supercharging network.
+                </div>
+                <div class="charging-options">
+                    <!-- Product 1 -->
+                    <button onclick="Buttonclick(this)" class="charger-button">
+                        <img width="100%" height="100%" src="https://digitalassets-shop.tesla.com/image/upload/f_auto,q_auto/v1/content/dam/tesla/CAR_ACCESSORIES/MODEL_3/CHARGING_ADAPTERS/WC_ConfigV4.png" alt="Home Charger">
+                        <br>
+                        <span style="font-weight: 600;">$420</span>
+                        <span style="font-weight: 600;">Home Charger</span>
+                        <span class="content" >Up to 44 mi range/hr</span>
+                        <span class="content" >install required</span>
+                    </button>
+                
+                    <!-- Product 2 -->
+                    <button onclick="Buttonclick(this)" class="charger-button">
+                        <img width="100%" height="100%" src="https://digitalassets-shop.tesla.com/image/upload/f_auto,q_auto/v1/content/dam/tesla/CAR_ACCESSORIES/MODEL_3/CHARGING_ADAPTERS/MC_ConfigV4.png" alt="Mobile Charger">
+                        <span style="font-weight: 600;">$250</span>
+                        <span style="font-weight: 600;">Mobile Charger</span>
+                        <span class="content">Up to 30 mi range/hr,</span>
+                        <span class="content">plug into any outlet</span>
+                    </button>
+                </div>
+                
+            </section>
+        
+                <h2>Accessories</h2>
+                <button onclick="Buttonclick(this)" class="button">
+                    <div>Center Console Tray</div><span>$35</span>
+                </button>
+                <button onclick="Buttonclick(this)" class="button">
+                    <div>Sunshade</div><span>$105</span>
+                </button>
+                <button onclick="Buttonclick(this)" class="button">
+                    <div>All-Weather Interior Liners</div><span>$225</span>
+                </button>
+                
+            
+            
+                <h2>Order Now</h2>
+                <div class="zipcode">
+                <h3>Enter Delivery Zip</h3>
+                    
+                    <input type="text" placeholder="Enter Delivery Zipcode"> <button class="ordernow">Update</button>
+                </div>
+                <div class="content">Estimated Payment: $690 per month</div><br>
+                <button class="order-now">Order Now</button>
+        </aside>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+
+
+        nextButton.addEventListener('click', () => {
+            galleryImages.scrollBy({
+                top: 0,
+                left: galleryImages.clientWidth,
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+    function Buttonclick(button,) {
+        button.classList.toggle('clicked');
+    }
+    
+    
+    let slideIndex = 1;
+    displaySlide(slideIndex);
+    
+    function moveSlides(n) {
+        displaySlide(slideIndex += n);
+    }
+    
+    function activeSlide(n) {
+        displaySlide(slideIndex = n);
+    }
+    
+    function displaySlide(n) {
+        let i;
+        let totalslides =
+            document.getElementsByClassName("slide");
+        let totaldots =
+            document.getElementsByClassName("footerdot");
+    
+        if (n > totalslides.length) {
+            slideIndex = 1;
+        }
+    
+        if (n < 1) {
+            slideIndex = totalslides.length;
+        }
+        for (i = 0; i < totalslides.length; i++) {
+            totalslides[i].style.display = "none";
+        }
+        for (i = 0; i < totaldots.length; i++) {
+            totaldots[i].className =
+                totaldots[i].className.replace(" active", "");
+        }
+        totalslides[slideIndex - 1].style.display = "block";
+        totaldots[slideIndex - 1].className += " active";
+    }
+    
+    // Only One button Program
+    
+    const buttons = document.querySelectorAll('.model-selection');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            buttons.forEach(btn => btn.classList.remove('clicked'));
+            button.classList.add('clicked');
+        });
+    });
+    </script>
+</body>
+</html>

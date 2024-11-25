@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+
+    <title>Tesla.com</title>
+    <style>
+        
+        .container {
+            margin: 48px;
+        }
+        .model-y, .model-3, .model-x, .model-s, .cybertruck {
+            position: relative; 
+            width: auto;
+            height: 100vh;
+            padding: 0px 24px;
+            border-radius: 10px;
+            background-size: cover;
+            text-align: center;
+        }
+        .model-y {
+            background-image: url("https://www.topgear.com/sites/default/files/2022/03/TopGear%20-%20Tesla%20Model%20Y%20-%20003.jpg");
+        }
+        .model-3 {
+            background-image: url("https://car-images.bauersecure.com/wp-images/3033/021_tesla_model_3.jpg");
+        }
+        .model-x {
+            background-image: url("https://images.alphacoders.com/121/1210651.jpg");
+        }
+        .model-s {
+            background-image: url("https://wallpapercave.com/wp/wp4315153.jpg");
+        }
+        .cybertruck {
+            background-image: url("https://pbs.twimg.com/media/GAN4O1BXcAA3IUC?format=jpg&name=4096x4096");
+        }
+        .cybertruck img {
+            width: 300px;
+        }
+        .title {
+            font-size: 56px;
+        }
+        .subhead {
+            font-size: 28px;
+            color:white;
+        }
+        .bottumtext {
+            font-size: 17px;
+            color: white;
+        }
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .button_c {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 15px;
+            width: 200px;
+        }
+        .button.demo {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            color: black ;
+            justify-content: center;
+            
+        }
+        .button.order{
+            background-color: #305cde;
+            border-radius: 10px;
+            padding: 15px;
+            color: white ;
+            justify-content: center;
+
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            
+        
+        }
+        .vd{
+            color:white
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+           
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .logo img {
+            height: 20px;
+            
+        }
+
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            padding: 0 20px;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 15px;
+        }
+
+        .dropdown-content {
+            position: fixed;
+            background-color: #f9f9f9;
+            width: 1550px; 
+            height: 560px; 
+            left: 0;
+            z-index: 1;
+            padding: 20px;
+            display: flex;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: flex;
+        }
+
+        .dropdown-content .vi {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            grid-template-rows: repeat(2, 1fr);   
+            gap: 10px;  
+            flex: 2;
+        }
+
+        .dropdown-content img {
+            width: 220px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .dropdown-content .vehicle-list {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .vehicle-list ul {
+            list-style-type: none;
+            font-size: 25px;
+            padding: 10px;
+            text-align: center;
+            border-left: 10px black;
+            background-color: rgba(0, 0,0, .07);
+        }
+
+        .vehicle-list ul li {
+            padding: 1.5px 0;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            text-size-adjust: 20px;
+        }
+
+        .btn-container a {
+            text-decoration: none;
+            font-size: 14px;
+            color: gray;
+            padding: 5px 0;
+            border-bottom: 1px solid transparent; 
+            cursor: pointer;
+        }
+
+        .btn-container a:hover {
+            border-bottom: 1px solid black; 
+        }
+
+        .icon-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-container a {
+            margin-left: 15px;
+            color: black;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .dropdown-content:hover {
+            display: flex;
+        }
+
+        .dropdown-content {
+            display: none;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: flex;
+        }
+        .vc {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        u{
+            color: gray;
+        }*/
+        .bc{
+            color: #000;
+        }
+    </style>
+
+    
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="https://www.freepnglogos.com/uploads/tesla-logo-png-20.png" alt="Tesla Logo">
+        </div>
+
+        <div class="bc">
+            <div class="dropdown">
+                <button class="dropbtn">Vehicles</button>
+                <div class="dropdown-content">
+                    <div class="vi">
+                        <div class="vc">
+                        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-S.png" alt="Model S">
+                         <p>Model S</p>
+                        <div class="btn-container">
+                            <button style="text-align: justify;"><u><a href="MODEL S.html">Order Now</a></u></button>
+                            <button style="text-align: justify;"><u><a href="demo.html">Test Drive</a></u></button>
+                        </div>
+                    </div>
+                    <div class="vc">
+                        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-3-Performance-LHD.png" alt="Model 3">
+                        <p>Model 3</p>
+                        <div class="btn-container">
+                            <button style="text-align: justify;"><u><a href="MODEL 3.HTML">Order Now</a></u></button>
+                            <button style="text-align: justify;"><u><a href="demo.html">Test Drive</a></u></button>
+                        </div>
+                    </div>
+                    <div class="vc">
+                        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-X.png" alt="Model X">
+                        <p>Model X</p>
+                        <div class="btn-container">
+                            <button style="text-align: justify;"><u><a href="MODEL X.HTML">Order Now</a></u></button>
+                            <button style="text-align: justify;"><u><a href="demo.html">Test Drive</a></u></button>
+                        </div>
+                    </div>
+                    <div class="vc">
+                        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Model-Y.png" alt="Model Y">
+                        <p>Model Y</p>
+                        <div class="btn-container">
+                            <button style="text-align: justify;"><u><a href="MODEL Y.HTML">Order Now</a></u></button>
+                            <button style="text-align: justify;"><u><a href="demo.html">Test Drive</a></u></button>
+                        </div>
+                    </div>
+                    <div class="vc">
+                        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Vehicles-Cybertruck-1x.png" alt="Cybertruck">
+                        <p>Cyber Truck</p>
+                        <div class="btn-container">
+                            <button style="text-align: justify;"><u><a href="CYBERTRUCK.HTML">Order Now</a></u></button>
+                            <button style="text-align: justify;"><u><a href="demo.html">Test Drive</a></u></button>
+                        </div>
+                    </div>
+
+                    </div>
+                    <div class="vehicle-list">
+                        <ul>
+                            <button><li>Inventory</li></button><br>
+                            <button><li>Used Cars</li></button><br>
+                            <button><li>Demo Drive</li></button><br>
+                            <button><li>Trade-in</li></button><br>
+                            <button><li>Compare</li></button><br>
+                            <button><li>Help Me Charge</li></button><br>
+                            <button><li>Fleet</li></button><br>
+                            <button><li>Semi</li></button><br>
+                            <button><li>Roadster</li></button><br>
+                            <button><li>Federal Tax Credit</li></button><br>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Energy</button>
+                <div class="dropdown-content">
+                    <div class="vi">
+                    <div class="vc">
+                        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Solar-Panels.png" alt="solar panel">
+                        <p>Solar panels</p>
+                        <div class="btn-container">
+                            <button style="text-align: justify;"><u><a href="#">Learn</a></u></button>
+                            <button style="text-align: justify;"><u><a href="#">order</a></u></button>
+                        </div>
+                    </div>
+                    <div class="vc">
+                        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Solar-Roof.png" alt="solar roof">
+                        <p>Solar Roof</p>
+                        <div class="btn-container">
+                            <button style="text-align: justify;"><u><a href="#">Learn</a></u></button>
+                            <button style="text-align: justify;"><u><a href="#">order</a></u></button>
+                        </div>
+                    </div>
+                    <div class="vc">
+                        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Powerwall-US.png" alt="Powerwall">
+                        <p>Power Wall</p>
+                        <div class="btn-container">
+                            <button style="text-align: justify;"><u><a href="#">Learn</a></u></button>
+                            <button style="text-align: justify;"><u><a href="#">order</a></u></button>
+                        </div>
+                    </div>
+                    <div class="vc">
+                        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Energy-Megapack.png" alt="Mega-Menu-Energy-Megapack">
+                        <P>Megapack</P>
+                        <div class="btn-container">
+                            <button style="text-align: justify;"><u><a href="#">Learn</a></u></button>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="vehicle-list">
+                        <ul>
+                            <button><li>Schedule a Consultation</li></button><br>
+                            <button><li>Why solar</li></button><br>
+                            <button><li>Incentives</li></button><br>
+                            <button><li>Support</li></button><br>
+                            <button><li>Partner with Tesla</li></button><br>
+                            <button><li>Commercial</li></button><br>
+                            <button><li>Utilities</li></button><br>
+                            <li></li></br>
+                            <li></li></br>
+                            <li></li></br>
+                            <li></li></br>
+                            <li></li></br>
+                            
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <button class="dropbtn">Charging</button>
+                <div class="dropdown-content">
+                    <div class="vi">
+                        <div class="vc">
+                            <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Charging.png">
+                            <p>charging station</p>
+                            <div class="btn-container">
+                            <button style="text-align: justify;"><u><a href="#">Learn</a></u></button>
+                        </div>
+                    </div>
+                    <div class="vc">
+                        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Home-Charging.png">
+                        <p>Home charging station</p>
+                        <div class="btn-container">
+                            <button style="text-align: justify;"><u><a href="#">Learn</a></u></button>
+                            <button style="text-align: justify;"><u><a href="#">shop</a></u></button>
+                        </div>
+                    </div>
+                    <div class="vc">
+                        <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Supercharging-NA.png">
+                        <p>Supercharger</p>
+                        <div class="btn-container">
+                            <button style="text-align: justify;"><u><a href="#">Learn</a></u></button>
+                            <button style="text-align: justify;"><u><a href="#">find</a></u></button>
+                        </div>
+                   </div>
+                    </div>
+                    <div class="vehicle-list">
+                        <ul>
+                            <button><li>Help me Charge</li></button><br>
+                            <button><li>Charging Calculator</li></button><br>
+                            <button><li>Charging with NACS</li></button><br>
+                            <button><li>Supercharger Voting</li></button><br>
+                            <button><li>Host a Supercharger</li></button><br>
+                            <button><li>Commercial Charging</li></button><br>
+                            <button><li>Host Wall Connector</li></button><br>
+                            <li></li></br>
+                            <li></li></br>
+                            <li></li></br>
+                            <li></li></br>
+                            <li></li></br>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn">Shop</button>
+                <div class="dropdown-content">
+                    <div class="vi">
+                        <div class="vc">
+                            <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Charging.png">
+                            <div class="btn-container">
+                                <button style="text-align: justify;"><u><a href="#">Charging</a></u></button>
+                            </div>
+                        </div>
+                        <div class="vc">
+                            <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Vehicle-Accessories.png">
+                            <div class="btn-container">
+                                <button style="text-align: justify;"><u><a href="#">Vehicle Accessories</a></u></button>
+                            </div>
+                        </div>
+                        <div class="vc">
+                            <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Apparel.png">
+                            <div class="btn-container">
+                                <button style="text-align: justify;"><u><a href="#">Apperal</a></u></button>
+                            </div>
+                        </div>
+                        <div class="vc">
+                            <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Shop-Lifestyle.png">
+                            <div class="btn-container">
+                                <button style="text-align: justify;"><u><a href="#">LifeStyle</a></u></button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+
+            
+        </div>
+
+        <div class="icon-container">
+            <a href="#" title="Menu"><i class="fas fa-bars"></i></a>
+            <a href="#" title="Account"><i class="fas fa-user"></i></a>
+            <a href="#" title="Help"><i class="fas fa-question Circle"></i></a>
+        </div>
+    </header>
+
+    <main> 
+     <div class="vd">      
+    <div class="container">
+        <div class="model-y">
+            <h1 class="title">Model Y</h1>
+            <a class="subhead" href="#">0% APR With Purchase of FSD (Supervised)</a>
+            <div class="bottumtext"> Lease Starting at $349/mo</div>
+
+            <div class="button-container">
+                <a href="MODEL Y.HTML" class="button order">Order Now</a>
+                <a href="demo.html" class="button demo">Demo Drive</a>
+            </div>
+        </div>
+    </div>  
+    <div class="container">
+        <div class="model-3">
+            <h1 class="title">Model 3</h1>
+            <a class="subhead" href="#">0% APR With Purchase of FSD (Supervised)</a>
+            <div class="bottumtext"> Lease Starting at 299/mo</div>
+
+            <div class="button-container">
+                <a href="MODEL 3.HTML" class="button order">Order Now</a>
+                <a href="demo.html" class="button demo">Demo Drive</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="model-x">
+            <h1 class="title">Model X</h1>
+            <div class="subhead">From $65,990</div>
+            <a class="bottumtext" href="#">After Federal Tax Credit $7,500 and Est. Gas Savings $6,500</a>
+ 
+            <div class="button-container">
+                <a href="MODEL X.HTML" class="button order">Order Now</a>
+                <a href="demo.html" class="button demo">Demo Drive</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="model-s">
+            <h1 class="title">Model S</h1>
+            <div class="subhead">From $68,490</div>
+            <div class="bottumtext">Lease Starting at $349/mo</div>
+
+            <div class="button-container">
+                <a href="MODEL S.html" class="button order">Order Now</a>
+                <a href="demo.html" class="button demo">Demo Drive</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cybertruck">
+            <img style="padding-top: 50px;"     src="Screenshot_2024-10-21_162242-removebg-preview.png" alt="cybertruck">
+
+            <div class="button-container">
+                <a href="CYBERTRUCK.HTML" class="button order">Order Now</a>
+                <a href="demo.html" class="button demo">Demo Drive</a>
+            </div>
+        </div>
+    </div>  
+</div>
+</main>
+<footer style="font-size: 8px;color:black;background-color:rgba(0, 0,0, .2);">
+    <center>
+        <p>
+            1 Monthly lease payment excludes taxes and fees, is based on $44,990 Model Y Long Range Rear-Wheel Drive purchase price and is subject to change at any time.<br> Requires $2,999 down with 36 months and 10,000 miles. Subject to credit approval and available in select U.S. states. Terms apply.
+</p></br>
+<p>
+2 Monthly lease payment excludes taxes and fees, is based on $42,490 Model 3 Long Range Rear-Wheel Drive purchase price and is subject to change at any time.<br> Requires $2,999 down with 36 months and 10,000 miles. Subject to credit approval and available in select U.S. states. Terms apply.
+</p></br>
+<p>
+
+3 Price before estimated savings is $81,630, including Destination and Order Fees, but excluding taxes and other fees. Subject to change.<br>Vehicle shown has upgrades that will increase the price.<br> Estimated savings includes $6,500 in gas savings estimated over five years, the $7,500 Federal Tax Credit and state incentives, available to eligible buyers and subject to MSRP caps.<br> Not all vehicles, customers or finance options will be eligible. Terms apply.
+</p></br>
+<p>
+
+4 Price before estimated savings is $76,630, including Destination and Order Fees, but excluding taxes and other fees. Subject to change.<br> Vehicle shown has upgrades that will increase the price.<br> Estimated savings includes $6,500 in gas savings estimated over five years and state incentives, available to eligible buyers and subject to MSRP caps.<br> Not all vehicles, customers or finance options will be eligible. Terms apply.
+</p></br>
+<p>
+Tesla © 2024
+Privacy & Legal
+Vehicle Recalls
+Contact
+News
+Get Updates
+Locations
+        </p>
+    </center>
+</footer>
+
+</body> 
+</html>

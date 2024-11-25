@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body {
+    font-family: Roboto, sans-serif;
+    margin-right: 30px;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+header img {
+    height: 20px;
+    position: fixed;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.content{
+    font-weight: 400;
+}
+
+.main-content {
+    flex: 3;
+    margin-right: 20px;
+}
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.title{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+.data ol{
+    display: flex;
+    flex-direction: row;
+}
+.facts{
+    font-size: 24px;
+}
+.cash{
+    text-align: center;
+    font-size: large;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.data ol li{
+    text-decoration: none;
+    display: inline;
+    text-align: center;
+    padding-right: 15px;
+}
+
+
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    gap: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.buttonm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    gap: 10px;
+    background-color:transparent;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 1000px;
+}
+.clicked {
+    border: 2px black solid;
+    color: rgb(0, 0, 0);
+    background-color: #f0efef;
+}
+
+.heading{
+    text-align: center;
+    font-size: 24px;
+    padding: 15px 0px;
+    /* border-bottom: 1px solid #ccc; */
+
+}
+
+.colortray{
+    display: flex;
+    justify-content: center;
+}
+
+.tireopt{
+    display: flex;
+    justify-content: center;
+    border-radius: 1000px;
+}
+
+.tireopt img{
+    margin: 5px;
+}
+
+.colortray img{
+    margin: 5px;
+}
+
+.image-container {
+    display: flex;
+    background-attachment: fixed;
+    
+
+    max-width: 900px;
+    position: fixed;
+    margin: auto;
+}
+
+.image-container img {
+    width: 100%;
+}
+.next {
+    right: 0;
+
+}
+
+.previous,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 10px;
+    margin-top: -25px;
+}
+
+.fa {
+    font-size: 32px;
+}
+
+.fa:hover {
+    transform: rotate(360deg);
+    transition: 1s;
+    color: #bbb;
+}
+
+   
+
+.charging-options {
+    display: flex;
+    gap: 10px;
+}
+
+
+.order-now {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.order-now:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .main-content {
+        margin-right: 0;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+</style>
+
+</head>
+<body>
+    <header>
+        <img src="https://www.freepnglogos.com/uploads/tesla-logo-png-20.png" alt="Tesla Logo">
+    </header>
+    <main class="container">
+        <div class="main-content">
+                <div class="image-container">
+                    <div class="slide">
+                        <img src="https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTS18,$PN01,$WS91,$IBE00&view=FRONT34&model=ms&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&" alt="model S">
+                    </div>
+                    <div class="slide">
+                        <img src="https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTS18,$PN01,$WS91,$IBE00&view=SIDE&model=ms&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&" alt="model S Side">
+                    </div>
+                    <div class="slide">
+                        <img src="https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTS18,$PN01,$WS91,$IBE00&view=REAR34&model=ms&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&" alt="model S">
+                    </div>
+                    <div class="slide">
+                        <img src="https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTS18,$PN01,$WS91,$IBE00&view=RIMCLOSEUP&model=ms&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&" alt="model S Side">
+                    </div>
+                    <div class="slide">
+                        <img src="https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTS18,$PN01,$IBE00,$ST06&view=INTERIOR&model=ms&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&" alt="model S Back">
+
+                    </div>
+                    
+                    <a class="previous" onclick="moveSlides(-1)">
+                        <i class="fa fa-chevron-circle-left"></i>
+                    </a>
+                    <a class="next" onclick="moveSlides(1)">
+                        <i class="fa fa-chevron-circle-right"></i>
+                    </a>
+                </div>
+                <div style="text-align:center">
+                    <span class="footerdot" onclick="activeSlide(1)">
+                    </span>
+                    <span class="footerdot" onclick="activeSlide(2)">
+                    </span>
+                    <span class="footerdot" onclick="activeSlide(3)">
+                    </span>
+                </div>
+
+        </div>
+        <aside class="sidebar">
+
+            <div class="title">Model S</div>
+
+            <section class="data">
+            <ol>
+                <li>
+                    <div class="facts">337ml</div>
+                    <span class="content">Range (EPA est.)</span>
+                </li>
+                <li>
+                    <div class="facts">135mph</div>
+                    <span class="content">Top Speed</span>
+                </li>
+                <li>
+                    <div class="facts">6.5sec</div>
+                    <span class="content">0-60 mph</span>
+                </li>
+                </ol>
+            </section>
+
+            <div class="cash"><h2>Cash</h2></div>
+
+            <button onclick="Buttonclick(this)" class="button">
+                <div>Long Range Rear-Wheel Drive</div><span>$37,490</span>
+            </button>
+
+
+            <button onclick="Buttonclick(this)" class="button">
+                <div>Long Range All-Wheel Drive</div><span>$40,490</span>
+            </button>
+
+
+            <button onclick="Buttonclick(this)" class="button">
+                <div>Performance All-Wheel Drive</div><span>$43,490</span>
+            </button>
+
+            <div class="heading">Color Options</div>
+            <div class="colortray">
+
+                <button onclick="Buttonclick(this)" class="buttonm">
+                    <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3_/UI/Paint_StealthGrey.png?" alt="Pearl White Multi-Coat" x="7px" y="7px"></button>
+       
+                   <button onclick="Buttonclick(this)" class="buttonm">
+                   <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/Paint_White.png?" alt="Pearl White Multi-Coat" x="7px" y="7px"></button>
+       
+                   <button onclick="Buttonclick(this)" class="buttonm">
+                   <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/Paint_Blue.png?" alt="Pearl White Multi-Coat" x="7px" y="7px"></button>
+       
+                   <button onclick="Buttonclick(this)" class="buttonm">
+                   <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/Paint_Red.png?" alt="Pearl White Multi-Coat" x="7px" y="7px"></button>
+                   </div>
+
+            <div class="heading">Tires</div>
+            <div class="tireopt">
+            <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODELY/UI/CN_gemini_wheels.png?" alt="Pearl White Multi-Coat" x="7px" y="7px">
+            <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODELY/UI/induction_wheels.png?" alt="Pearl White Multi-Coat" x="7px" y="7px">
+            </div>
+
+            <div class="heading">Tow Package</div><span class="content">
+                Tow up to 3,500 lbs with a class II steel tow bar
+            </span>
+            <button onclick="Buttonclick(this)" class="button">
+                <div>Tow Hitch</div><span>$1,000</span>
+            </button>
+
+            <div class="heading">Interior</div>
+            <div class="tireopt">
+                <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/ui_swat_int_in3pb.png?" alt="Pearl White Multi-Coat" x="7px" y="7px">
+                <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/ui_swat_int_white.png?" alt="Pearl White Multi-Coat" x="7px" y="7px">
+            </div>
+
+            <section id="charging">
+                <div class="heading">Charging</div><div class="content">
+                    Every Tesla includes access to the largest global Supercharging network.
+                </div>
+                <div class="charging-options">
+                    <button onclick="Buttonclick(this)" class="button">
+                        <img width="100%" height="100%" src="https://digitalassets-shop.tesla.com/image/upload/f_auto,q_auto/v1/content/dam/tesla/CAR_ACCESSORIES/MODEL_3/CHARGING_ADAPTERS/WC_ConfigV4.png?" alt="Home Charger"></button>
+                    <button onclick="Buttonclick(this)" class="button">
+                        <img width="100%" height="100%" src="https://digitalassets-shop.tesla.com/image/upload/f_auto,q_auto/v1/content/dam/tesla/CAR_ACCESSORIES/MODEL_3/CHARGING_ADAPTERS/MC_ConfigV4.png?"  alt="Home Charger"></button>
+
+                </div>
+            </section>
+
+                <h2>Accessories</h2>
+                <button onclick="Buttonclick(this)" class="button">
+                    <div>Center Console Tray</div><span>$35</span>
+                </button>
+                <button onclick="Buttonclick(this)" class="button">
+                    <div>Sunshade</div><span>$105</span>
+                </button>
+                <button onclick="Buttonclick(this)" class="button">
+                    <div>All-Weather Interior Liners</div><span>$225</span>
+                </button>
+
+
+
+                <h2>Order Now</h2>
+                <div class="content">Estimated Payment: $690 per month</div><br>
+                <button class="order-now">Order Now</button>
+        </aside>
+    </main>
+
+    <script>// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Gallery scroll functionality
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const galleryImages = document.querySelector('.gallery-images');
+    let scrollAmount = 0;
+
+    prevButton.addEventListener('click', () => {
+        galleryImages.scrollBy({
+            top: 0,
+            left: -galleryImages.clientWidth,
+            behavior: 'smooth'
+        });
+    });
+
+    nextButton.addEventListener('click', () => {
+        galleryImages.scrollBy({
+            top: 0,
+            left: galleryImages.clientWidth,
+            behavior: 'smooth'
+        });
+    });
+});
+
+price = 0
+function Buttonclick(button) {
+    button.classList.toggle('clicked'); // Toggle the 'clicked' class
+}
+
+
+let slideIndex = 1;
+displaySlide(slideIndex);
+
+function moveSlides(n) {
+	displaySlide(slideIndex += n);
+}
+
+function activeSlide(n) {
+	displaySlide(slideIndex = n);
+}
+
+/* Main function */
+function displaySlide(n) {
+	let i;
+	let totalslides =
+		document.getElementsByClassName("slide");
+	let totaldots =
+		document.getElementsByClassName("footerdot");
+
+	if (n > totalslides.length) {
+		slideIndex = 1;
+	}
+
+	if (n < 1) {
+		slideIndex = totalslides.length;
+	}
+	for (i = 0; i < totalslides.length; i++) {
+		totalslides[i].style.display = "none";
+	}
+	for (i = 0; i < totaldots.length; i++) {
+		totaldots[i].className =
+			totaldots[i].className.replace(" active", "");
+	}
+	totalslides[slideIndex - 1].style.display = "block";
+	totaldots[slideIndex - 1].className += " active";
+}
+</script>
+</body>
+</html>

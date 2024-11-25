@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            color: white;
+        }
+        .container {
+            margin: 48px;
+        }
+        .model-y, .model-3, .model-x, .model-s, .cybertruck {
+            position: relative; /* Ensures the buttons are positioned correctly */
+            width: auto;
+            height: 100vh;
+            padding: 0px 24px;
+            border-radius: 10px;
+            background-size: cover;
+            text-align: center;
+        }
+        .model-y {
+            background-image: url("https://www.topgear.com/sites/default/files/2022/03/TopGear%20-%20Tesla%20Model%20Y%20-%20003.jpg");
+        }
+        .model-3 {
+            background-image: url("https://car-images.bauersecure.com/wp-images/3033/021_tesla_model_3.jpg");
+        }
+        .model-x {
+            background-image: url("https://images.alphacoders.com/121/1210651.jpg");
+        }
+        .model-s {
+            background-image: url("https://wallpapercave.com/wp/wp4315153.jpg");
+        }
+        .cybertruck {
+            background-image: url("https://pbs.twimg.com/media/GAN4O1BXcAA3IUC?format=jpg&name=4096x4096");
+        }
+        .cybertruck img {
+            width: 300px;
+        }
+        .title {
+            font-size: 56px;
+        }
+        .subhead {
+            font-size: 28px;
+        }
+        .bottumtext {
+            font-size: 17px;
+        }
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 15px;
+            width: 200px;
+        }
+        .button.demo {
+            color: #000;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="model-y">
+            <h1 class="title">Model Y</h1>
+            <a class="subhead" href="#">0% APR With Purchase of FSD (Supervised)</a>
+            <div class="bottumtext"> Lease Starting at $349/mo</div>
+
+            <div class="button-container">
+                <a href="#" class="button order">Order Now</a>
+                <a href="#" class="button demo">Demo Drive</a>
+            </div>
+        </div>
+    </div>  
+    <div class="container">
+        <div class="model-3">
+            <h1 class="title">Model 3</h1>
+            <a class="subhead" href="#">0% APR With Purchase of FSD (Supervised)</a>
+            <div class="bottumtext"> Lease Starting at 299/mo</div>
+
+            <div class="button-container">
+                <a href="#" class="button order">Order Now</a>
+                <a href="#" class="button demo">Demo Drive</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="model-x">
+            <h1 class="title">Model X</h1>
+            <div class="subhead">From $65,990</div>
+            <a class="bottumtext" href="#">After Federal Tax Credit $7,500 and Est. Gas Savings $6,500</a>
+ 
+            <div class="button-container">
+                <a href="#" class="button order">Order Now</a>
+                <a href="#" class="button demo">Demo Drive</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="model-s">
+            <h1 class="title">Model S</h1>
+            <div class="subhead">From $68,490</div>
+            <div class="bottumtext">Lease Starting at $349/mo</div>
+
+            <div class="button-container">
+                <a href="#" class="button order">Order Now</a>
+                <a href="#" class="button demo">Demo Drive</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cybertruck">
+            <img src="https://i0.wp.com/vividreal.com/wp-content/uploads/2019/12/Tesla-Cybertruck-branding.png?w=680&ssl=1" alt="cybertruck">
+
+            <div class="button-container">
+                <a href="#" class="button order">Order Now</a>
+                <a href="#" class="button demo">Demo Drive</a>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>

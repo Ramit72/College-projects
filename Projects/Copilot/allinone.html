@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+body {
+font-family: Roboto, sans-serif;
+margin-right: 30px;
+padding: 0;
+background-color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+header img {
+    height: 20px;
+    position: fixed;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.content{
+    font-weight: 300;
+}
+
+.main-content {
+    flex: 3;
+    margin-right: 20px;
+}
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.title{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.data ol{
+    display: flex;
+    flex-direction: row;
+}
+.facts{
+    font-size: 24px;
+}
+.cash{
+    text-align: center;
+    font-size: large;
+    border-bottom: 1px solid #ccc;
+    
+}
+
+.data ol li{
+    text-decoration: none;
+    display: inline;
+    text-align: center;
+    padding-right: 35px;
+}
+
+
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 100px;
+}
+
+
+.accessories-button, .tow-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    gap: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.model-selection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    gap: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.model-selection.clicked {
+    border: 2px black solid;
+    color: rgb(0, 0, 0); 
+    background-color: #f0efef;
+    font-weight: 600;
+}
+
+.heading{
+    text-align: center;
+    font-size: 24px;
+    padding: 15px 0px;
+
+}   
+
+.colortray{
+    display: flex;
+    justify-content: center;
+}
+
+.tireopt{
+    display: flex;
+    justify-content: center;
+}
+
+.image-container {
+    display: flex;
+    max-width:1000px;
+    position: fixed;
+    margin: auto;
+}
+
+.image-container img {
+    width: 100%;
+}
+.next {
+    right: 0;
+
+}
+ 
+.previous,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 10px;
+    margin-top: -25px;
+}
+ 
+.fa {
+    font-size: 32px;
+}
+ 
+.fa:hover {
+    transform: rotate(360deg);
+    transition: 1s;
+    color: #bbb;
+}
+ 
+ 
+.active,
+.footerdot:hover {
+    background-color: black;
+}
+
+.charging-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.charger-button {
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.charger-button img {
+    width: 100%;
+    height: auto;
+}   
+
+.charger-button span {
+    display: block;
+    margin-top: 5px;
+    color: #333;
+}
+
+.clicked {
+    border: 2px black solid;
+    color: rgb(0, 0, 0); 
+    background-color: #f0efef;
+    font-weight: 600;
+}
+
+.order-now {
+    padding: 10px 20px;
+    background-color: #0073ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.order-now:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .main-content {
+        margin-right: 0;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://www.freepnglogos.com/uploads/tesla-logo-png-20.png" alt="Tesla Logo">
+    </header>
+    <main class="container">
+        <div class="main-content">
+                <div class="image-container">
+                    <div class="slide">
+                        <img src="https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTY36,$PN01,$WY19C,$INPB0&view=FRONT34&model=my&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&.png" alt="Model Y">
+                    </div>
+                    <div class="slide">
+                        <img src="https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTY36,$PN01,$WY19C,$INPB0&view=SIDE&model=my&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&.png" alt="Model Y Side">
+                    </div>
+                    <div class="slide">
+                        <img src="https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTY36,$PN01,$WY19C,$INPB0&view=REAR34&model=my&size=1920&bkba_opt=2&crop=0,0,0,0&overlay=0&.png" alt="Model Y Back">
+                    
+                    </div>
+                    <a class="previous" onclick="moveSlides(-1)">
+                        <i class="fa fa-chevron-circle-left"></i>
+                    </a>
+                    <a class="next" onclick="moveSlides(1)">
+                        <i class="fa fa-chevron-circle-right"></i>
+                    </a>
+                </div>
+
+        </div>
+        <aside class="sidebar">
+            
+            <div class="title">Model Y</div>
+            
+            <section class="data">
+            <ol>
+                <li>
+                    <div class="facts">337ml</div>
+                    <span class="content">Range (EPA est.)</span>
+                </li>
+                <li>
+                    <div class="facts">135mph</div>
+                    <span class="content">Top Speed</span>
+                </li>
+                <li>
+                    <div class="facts">6.5sec</div>
+                    <span class="content">0-60 mph</span>
+                </li>
+                </ol>
+            </section>
+
+            <div class="cash"><h2>Cash</h2></div>
+
+            <button onclick="Buttonclick(this)" class="model-selection">
+                <div>Long Range Rear-Wheel Drive</div><span>$37,490</span>
+            </button>
+                    
+            
+            <button onclick="Buttonclick(this)" class="model-selection">
+                <div>Long Range All-Wheel Drive</div><span>$40,490</span>
+            </button>
+
+            
+            <button onclick="Buttonclick(this)" class="model-selection">
+                <div>Performance All-Wheel Drive</div><span>$43,490</span>
+            </button>
+
+            <div class="heading">Color Options</div>
+            <div class="colortray">
+
+            <button onclick="Buttonclick(this)" class="button">
+             <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3_/UI/Paint_StealthGrey.png?" alt="Stealth Grey" x="7px" y="7px"></button>
+           
+            <button onclick="Buttonclick(this)" class="button">
+            <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/Paint_White.png?" alt="Pearl White Multi-Coat" x="7px" y="7px"></button>
+           
+            <button onclick="Buttonclick(this)" class="button">
+            <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/Paint_Blue.png?" alt="Deep Blue Mettalic" x="7px" y="7px"></button>
+           
+            <button onclick="Buttonclick(this)" class="button">
+            <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/Paint_Red.png?" alt="Ultra Red" x="7px" y="7px"></button>
+            </div>
+            
+            <!-- Tires Option Section -->
+            <div class="heading">Tires</div>
+            <div class="tireopt">
+            <button onclick="Buttonclick(this)" class="button">
+            <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODELY/UI/CN_gemini_wheels.png?" alt='19" Gemini Dark Tires' x="7px" y="7px"></button>
+            <button onclick="Buttonclick(this)" class="button">
+            <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODELY/UI/induction_wheels.png?" alt='20" Induction Wheels' x="7px" y="7px"></button>
+            </div>
+            
+            <!-- Tow Package Section -->
+            <div class="heading">Tow Package</div><span class="content">
+                Tow up to 3,500 lbs with a class II steel tow bar
+            </span>
+            <button onclick="Buttonclick(this)" class="tow-button">
+                <div>Tow Hitch</div><span>$1,000</span>
+            </button>
+
+            <!-- Interior Section -->
+            <div class="heading">Interior</div>
+            <div class="tireopt">
+                <button onclick="Buttonclick(this)" class="button">
+                    <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/ui_swat_int_in3pb.png?" alt="black" x="7px" y="7px"></button>
+                    <button onclick="Buttonclick(this)" class="button">
+                    <img width="40px" height="40px" src="https://digitalassets.tesla.com/co1n/image/upload/f_auto,q_auto/prod/static_assets/MODEL3/UI/ui_swat_int_white.png?" alt="White" x="7px" y="7px"></button>
+            </div>
+
+
+            <!-- Charging  Section-->
+            <section id="charging">
+                <div class="heading">Charging</div><div class="content">
+                    Every Tesla includes access to the largest global Supercharging network.
+                </div>
+                <div class="charging-options">
+
+                    <button onclick="Buttonclick(this)" class="charger-button">
+                        <img width="100%" height="100%" src="https://digitalassets-shop.tesla.com/image/upload/f_auto,q_auto/v1/content/dam/tesla/CAR_ACCESSORIES/MODEL_3/CHARGING_ADAPTERS/WC_ConfigV4.png" alt="Home Charger">
+                        <br>
+                        <span style="font-weight: 600;">$420</span>
+                        <span style="font-weight: 600;">Home Charger</span>
+                        <span class="content" >Up to 44 mi range/hr</span>
+                        <span class="content" >install required</span>
+                    </button>
+                
+                    
+                    <button onclick="Buttonclick(this)" class="charger-button">
+                        <img width="100%" height="100%" src="https://digitalassets-shop.tesla.com/image/upload/f_auto,q_auto/v1/content/dam/tesla/CAR_ACCESSORIES/MODEL_3/CHARGING_ADAPTERS/MC_ConfigV4.png" alt="Mobile Charger">
+                        <span style="font-weight: 600;">$250</span>
+                        <span style="font-weight: 600;">Mobile Charger</span>
+                        <span class="content">Up to 30 mi range/hr,</span>
+                        <span class="content">plug into any outlet</span>
+                    </button>
+                </div>
+                
+            </section>
+        
+                <h2>Accessories</h2>
+                <button onclick="Buttonclick(this)" class="accessories-button">
+                    <div>Center Console Tray</div><span>$35</span>
+                </button>
+                <button onclick="Buttonclick(this)" class="accessories-button">
+                    <div>Sunshade</div><span>$105</span>
+                </button>
+                <button onclick="Buttonclick(this)" class="accessories-button">
+                    <div>All-Weather Interior Liners</div><span>$225</span>
+                </button>
+                
+            
+            
+                <h2>Order Now</h2>
+                <div class="zipcode">
+                <h3>Enter Delivery Zip</h3>
+                    
+                    <input type="text" placeholder="Enter Delivery Zipcode"> <button class="ordernow">Update</button>
+                </div>
+                <div class="content">Estimated Payment: $690 per month</div><br>
+                <button class="order-now">Order Now</button>
+        </aside>
+    </main>
+
+    <script>
+        function Buttonclick(buttonElement) {
+            let parentContainer = buttonElement.parentElement;
+            let buttons = parentContainer.querySelectorAll('.button, .model-selection, .charger-button');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('clicked');
+            });
+
+            buttonElement.classList.add('clicked');
+        }
+
+
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function moveSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+
+            if (n >= slides.length) {
+                slideIndex = 0;
+            }
+            if (n < 0) {
+                slideIndex = slides.length - 1;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+    </script>
+</body>
+</html>
